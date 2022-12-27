@@ -1,28 +1,23 @@
 import commonjs from '@rollup/plugin-commonjs'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import { visualizer } from 'rollup-plugin-visualizer'
-import strip from '@rollup/plugin-strip'
 import esbuild from 'rollup-plugin-esbuild'
 import alias from '@rollup/plugin-alias'
-import scss from 'rollup-plugin-scss'
 import path from 'path'
-import replace from '@rollup/plugin-replace'
 import del from 'rollup-plugin-delete'
 
 const customResolver = nodeResolve({
   extensions: ['.mjs', '.js', '.jsx', '.json', '.sass', '.scss']
 })
 
-const isProduction = process.env.NODE_ENV === 'production'
-
-const outDir = '../Venus/wwwroot/assets'
+const outDir = '../dist/bin'
 
 export default {
-  input: 'src/index.tsx',
+  input: 'src/main.tsx',
   preserveEntrySignatures: false,
   output: {
     dir: outDir, 
-    format: 'iife'
+    format: 'umd'
   },
   plugins: [
     del({ targets: outDir + '/*', force: true }),
@@ -58,22 +53,6 @@ export default {
         // Enable JSX in .js files too
         '.js': 'jsx',
       },
-    }),
-    scss({
-      output: outDir + '/index.css',
-      watch: ['src']
-    }),
-    replace({
-      'process.env.NODE_ENV': JSON.stringify('production'),
-      __buildDate__: () => JSON.stringify(new Date()),
-      __buildVersion: 15,
-      preventAssignment: true
-    }),
-    strip({
-      include: '**/*.(js|mjs|ts|tsx)',
-      debugger: !isProduction,
-      functions: isProduction ? ['console.log', 'console.debug'] : [],
-      sourceMap: isProduction
     }),
     visualizer({
       filename: 'debug/status.html'
