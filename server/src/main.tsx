@@ -1,10 +1,9 @@
 
 import React from 'react';
 import * as ReactDOMServer from 'react-dom/server';
-import express = require('express');
-import { HomePage } from './pages/home';
-const prettify = require('html-prettify');
-var html = require("html");
+import express from 'express';
+import { HomePage } from './pages/home'; 
+import html from "html";
 // Create a new express application instance
 const app: express.Application = express();
 

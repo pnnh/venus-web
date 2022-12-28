@@ -5,6 +5,7 @@
     "dev": "rollup --config --watch",
     "build": "rollup --config"
   },
+  "type": "module",
   "private": true,
   "dependencies": {
     "axios": "^0.27.2",
@@ -27,6 +28,7 @@
     "@rollup/plugin-replace": "^5.0.0",
     "@rollup/plugin-strip": "^2.1.0",
     "@types/express": "^4.17.15",
+    "@types/html": "^1.0.1",
     "@types/jquery": "^3.5.14",
     "@types/node": "^17.0.2",
     "@types/react": "^18.0.9",
@@ -48,6 +50,7 @@
     "rollup-plugin-scss": "^3.0.0",
     "rollup-plugin-visualizer": "^5.5.0",
     "sass": "^1.55.0",
+    "tsx": "^3.12.1",
     "typescript": "^4.3.2"
   }
 }

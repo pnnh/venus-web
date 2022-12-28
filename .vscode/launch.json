@@ -29,6 +29,22 @@
             "cwd": "${workspaceRoot}/dist",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen"
-        }
+        },
+        {
+            "name": "TSNode",
+            "type": "node",
+            "request": "launch",
+            "args": [
+              "${workspaceRoot}/server/src/main.tsx" // 入口文件
+            ],
+            "runtimeArgs": [
+              "--loader", 
+              "tsx"
+            ], 
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}/dist", 
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+          }
     ]
 }
