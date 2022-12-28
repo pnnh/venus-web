@@ -56,8 +56,7 @@ function Col() {
 export function HomePage() {
     return <html lang="zh">
         <head>
-            <MetaPartial />
-            <link rel='stylesheet' type='text/css' href='/assets/index.css' />
+            <MetaPartial /> 
             <title>启明星</title>
         </head>
         <body className="home">
@@ -93,7 +92,7 @@ export function HomePage() {
                     </div>
                 </main>
             </div>
-            <script type='module' src='/assets/index.js'></script>
+            <script type='module' src='/src/entry-client.tsx'></script>
         </body>
     </html>;
 }
