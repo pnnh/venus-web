@@ -1,7 +1,7 @@
 import React from "react";
 import { HeaderPartial } from "./partial/header";
 import { MetaPartial } from "./partial/meta";
-import { PictureModel } from "../models/picture";
+import { PictureModel } from "../../models/picture";
 
 function Item(props: { models: PictureModel[] }) {
     var models = props.models;
@@ -53,10 +53,10 @@ function Col() {
     </>
 }
 
-export function HomePage() {
+export function HomeServerPage() {
     return <html lang="zh">
         <head>
-            <MetaPartial /> 
+            <MetaPartial />
             <title>启明星</title>
         </head>
         <body className="home">

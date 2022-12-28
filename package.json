@@ -1,7 +1,10 @@
 {
   "name": "venus",
   "version": "1.0.0",
-  "scripts": {},
+  "scripts": {
+    "dev": "node --loader tsx src/main.tsx",
+    "build": "rollup --config"
+  },
   "workspaces": [
     "server",
     "client",

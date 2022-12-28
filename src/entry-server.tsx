@@ -1,6 +1,6 @@
 import React from "react";
 import * as ReactDOMServer from 'react-dom/server';
-import { HomePage } from './pages/home';
+import { HomeServerPage } from './server/pages/home-server';
 import html from "html";
 
 const isProduction = process.env.NODE_ENV === 'production'
@@ -12,7 +12,7 @@ export function render(url: string) {
   let pageHtml = ""
   if (url === "/") {
 
-    pageHtml = ReactDOMServer.renderToStaticMarkup(<HomePage />);
+    pageHtml = ReactDOMServer.renderToStaticMarkup(<HomeServerPage />);
   }
 
   if (!isProduction) {
