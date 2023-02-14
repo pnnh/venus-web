@@ -1,27 +1,22 @@
-.articleList {
-  background: #FFFFFF;
-  margin: 0 auto 24px;
-  padding: 16px;
-  border-radius: 4px;
-  box-shadow: #f4f4f4;
+.pictureList {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(auto, 16.66666667%));
+  grid-gap: 16px;
+
 }
 
-.articleItem {
+
+.pictureItem {
   border-bottom: 1px solid #e5e6eb;
   padding-bottom: 16px;
 
 }
 
-.articleItem:last-child {
+.pictureItem:last-child {
   border-bottom-width: 0;
 }
 
-
-.articleTitle {
-  margin: 16px auto;
-}
-
-.articleLink {
+.pictureLink {
   color: #000;
   text-decoration: none;
   font-size: 18px;
@@ -29,7 +24,7 @@
   line-height: 1.6;
 }
 
-.articleDescription {
+.pictureDescription {
   color: #5e5e5e;
   font-size: 14px;
   line-height: 22px;
