@@ -9,7 +9,7 @@ export class PictureModel {
     description: string = "";
     createTime?: Date = new Date();
     updateTime?: Date = new Date();
-    filePath: string = "";
+    file: string = "";
 }
  
 
@@ -19,31 +19,12 @@ export class selectResultModel {
 }
 
 export async function selectPictureModels(page: number, size: number): Promise<selectResultModel> {
-
-
-  var a: PictureModel = {
-    pk: "a", title: "test", filePath: "/files/pictures/1.webp",
-    description: "",
-  }
-  var b: PictureModel = {
-    pk: "b", title: "test", filePath: "/files/pictures/2.webp",
-    description: "",
-  }
-  var c: PictureModel = {
-    pk: "c", title: "test", filePath: "/files/pictures/3.webp",
-    description: "",
-  }
-  var models = [a, b, c];
-
-  return {count: 3, list: models};
-
-
     let offset = (page - 1) * size;
     if (offset < 0) {
         offset = 0;
     }
     const response = await axios.get<CommonReslut<selectResultModel>>(RestfulAddress.PictureService + '/restful/picture/select',
-        { params: { offset: offset, size: size } });
+        { params: { offset: offset, limit: size } });
     return response.data.data;
 }
 

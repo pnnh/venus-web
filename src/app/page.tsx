@@ -13,7 +13,7 @@ export default async function Home() {
 
 
 export async function LoadPictureList(page: number = 1) {
-  const pageSize = 8
+  const pageSize = 24
   const result = await selectPictureModels(page, pageSize)
   const pagination = calcPagination(page, result.count, pageSize);
   console.log("pagination", pagination)
@@ -42,11 +42,9 @@ export async function LoadPictureList(page: number = 1) {
 
 export function PictureItem(props: { model: PictureModel }) {
 
-  return <div className={styles.pictureItem}>
-    <div> 
+  return <div>
         <a className={styles.pictureLink} href={"/picture/" + props.model.pk}>
-          <img src={props.model.filePath} alt={props.model.description} />
-        </a>  
-    </div>
+          <img className={styles.pictureImage} src={props.model.file} alt={props.model.description} />
+        </a>
   </div>
 }

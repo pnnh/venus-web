@@ -1,19 +1,7 @@
 .pictureList {
   display: grid;
-  grid-template-columns: repeat(6, minmax(auto, 16.66666667%));
+  grid-template-columns: repeat(6, minmax(auto, 16.66%)); 
   grid-gap: 16px;
-
-}
-
-
-.pictureItem {
-  border-bottom: 1px solid #e5e6eb;
-  padding-bottom: 16px;
-
-}
-
-.pictureItem:last-child {
-  border-bottom-width: 0;
 }
 
 .pictureLink {
@@ -22,6 +10,13 @@
   font-size: 18px;
   font-weight: 600;
   line-height: 1.6;
+}
+
+.pictureImage {
+  display: block;
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;
 }
 
 .pictureDescription {
@@ -39,6 +34,7 @@
   list-style: none;
   background-color: #FFFFFF;
   padding: 8px;
+  margin-top: 16px;
 }
 
 .pageItem {
