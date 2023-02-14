@@ -14,3 +14,8 @@ build/
 gen/
 debug/
 dist/
+.vscode/
+.next/
+.vercel
+*.tsbuildinfo
+next-env.d.ts

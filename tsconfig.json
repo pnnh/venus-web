@@ -3,15 +3,27 @@
     "types": [
       "node"
     ],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "experimentalDecorators": true,
     "useDefineForClassFields": false,
     "module": "ESNext",
     "target": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "strictNullChecks": true,
     "noImplicitAny": true,
     "sourceMap": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
     "allowJs": true,
-    "jsx": "react-jsx",
+    "jsx": "preserve",
+    "incremental": true,
     "esModuleInterop": true,
     "strict": true,
     "allowSyntheticDefaultImports": true,
@@ -19,17 +31,24 @@
     "baseUrl": ".",
     "paths": {
       "@/*": [
-        "src/*"
+        "./src/*"
       ],
       "~/*": [
-        "node_modules/*"
+        "./node_modules/*"
       ]
     },
-    "plugins": []
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
-  //"skipLibCheck": false,
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",
